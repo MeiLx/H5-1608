@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+#box{border:1px dotted green;positon:relative;}
+#process{height:20px;background:blue;width:0;}
+#precent{position:absolute;left:50%;top:10px;}
+</style>
+<script>
+	window.onload=function(){
+		var process=document.getElementById('process');
+		var precent=document.getElementById('precent');
+		var id,init=0;
+		id=setInterval(function(){
+			init++;
+			process.style.width=init+'%';
+			precent.innerHTML=init+'%';
+			if(init==100){
+				clearInterval(id);
+			}	
+		},200);	
+	}
+</script>
+</head>
+<body>
+	<div id="box">
+    	<div id="process"></div>
+        <span id="precent"></span>
+    </div>
+</body>
+</html>
